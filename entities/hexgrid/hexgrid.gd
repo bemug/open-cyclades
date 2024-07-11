@@ -1,19 +1,33 @@
 #Reference : https://www.redblobgames.com/grids/hexagons/
 extends Node3D
 
-@export var width : int = 8
-@export var height : int = 8
+@export var q_max: int = 3
+@export var r_max : int = 3
 
-# Key: cube coordinates as Vector3
+# Key: cube coordinates as Vector3. X=Q, Y=R, Z=S.
 # Value: The Hextile
 var hexes : Dictionary = {}
 var hextile_res : Resource = preload("res://entities/hextile/hextile.tscn")
+var size : float = 1.2 #TODO get tile size
 
 
 func _ready() -> void:
-	var hex : Node = hextile_res.instantiate()
-	hexes[Vector3(0, 0, 0)] = hex
-	add_child(hex)
+	for q in range(-q_max, q_max + 1):
+		for r in range(-r_max, r_max + 1):
+			var s : int = -q-r
+			if abs(s) > q_max:
+				continue
+			var coord : Vector3 = Vector3(q, r, -q-r)
+			print(coord)
+			var hex : Node3D = hextile_res.instantiate()
+			hex.position = hex_to_pixel(coord)
+			hexes[coord] = hex
+			add_child(hex)
 
 func _process(delta: float) -> void:
 	pass
+
+func hex_to_pixel(coord : Vector3) -> Vector3:
+	var x : float = size * (sqrt(3) * coord.x  +  sqrt(3)/2 * coord.y)
+	var y : float = size * (3./2 * coord.y)
+	return Vector3(x, 0, y)
