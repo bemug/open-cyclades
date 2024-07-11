@@ -8,7 +8,7 @@ extends Node3D
 # Value: The Hextile
 var hexes : Dictionary = {}
 var hextile_res : Resource = preload("res://entities/hextile/hextile.tscn")
-var size : float = 1.2 #TODO get tile size
+var size : float = 1 #TODO get tile size
 
 
 func _ready() -> void:

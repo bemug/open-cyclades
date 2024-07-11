@@ -6,6 +6,7 @@
 top_radius = 1.0
 bottom_radius = 1.0
 height = 0.1
+radial_segments = 6
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hq5e2"]
 height = 0.1
