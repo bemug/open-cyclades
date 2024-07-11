@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2odlo4v2fcvi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xnh78"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.1
+
+[node name="Hextile" type="Node3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_xnh78")
