@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="open-cyclades"
-run/main_scene="res://entities/hexgrid/hexgrid.tscn"
+run/main_scene="res://entities/maps/test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
