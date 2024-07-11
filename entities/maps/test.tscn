@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh8ua3r0srcsj"]
+[gd_scene load_steps=3 format=3 uid="uid://dh8ua3r0srcsj"]
 
 [ext_resource type="PackedScene" uid="uid://fsv2txaxkuub" path="res://entities/hexgrid/hexgrid.tscn" id="1_qpkwb"]
+
+[sub_resource type="Theme" id="Theme_dc4rr"]
+default_font_size = 8
 
 [node name="Test" type="Node3D"]
 
@@ -14,3 +17,42 @@ size = 15.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.49736, 0)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="GodsTrack" type="VBoxContainer" parent="UI"]
+offset_right = 783.0
+offset_bottom = 227.0
+
+[node name="God" type="VBoxContainer" parent="UI/GodsTrack"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/GodsTrack/God"]
+layout_mode = 2
+text = "Poséidon"
+max_lines_visible = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/GodsTrack/God"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Description" type="Label" parent="UI/GodsTrack/God/ScrollContainer"]
+layout_mode = 2
+theme = SubResource("Theme_dc4rr")
+text = "Poséidon offre une flotte gratuite.
+Il est possible d’acheter des flottes supplémentaires comme suit :
+• La deuxième flotte coûte 1 PO
+• La troisième 2 PO
+• La quatrième 3 PO.
+On ne peut pas acheter plus de 3 flottes supplémentaires dans le même tour.
+Chaque joueur ne peut pas posséder plus de 8 flottes.
+On doit construire les flottes sur une case de mer se trouvant autour d’une île appartenant au joueur. Cette case doit être vide ou occupée par des flottes appartenant à ce même joueur.
+
+Déplacer ses flottes
+Pour 1 PO, le joueur peut déplacer des flottes se trouvant dans la même case de mer et les faire avancer de 3 cases au maximum. Il peut intégrer ou abandonner des flottes au cours de ce déplacement.
+Si des flottes pénètrent dans une case occupée par des flottes adverses, leur mouvement est terminé et une bataille navale s’engage immédiatement."
