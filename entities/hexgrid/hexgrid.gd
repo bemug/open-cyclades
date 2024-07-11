@@ -2,7 +2,7 @@
 extends Node3D
 
 @export var q_max: int = 3
-@export var r_max : int = 3
+@export var r_max : int = 5
 
 # Key: cube coordinates as Vector3. X=Q, Y=R, Z=S.
 # Value: The Hextile
@@ -17,7 +17,7 @@ func _ready() -> void:
 			var s : int = -q-r
 			if abs(s) > q_max:
 				continue
-			var coord : Vector3 = Vector3(q, r, -q-r)
+			var coord : Vector3 = Vector3(q, r, s)
 			print(coord)
 			var hex : Node3D = hextile_res.instantiate()
 			hex.position = hex_to_pixel(coord)
