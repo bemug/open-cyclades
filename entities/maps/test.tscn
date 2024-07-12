@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh8ua3r0srcsj"]
+[gd_scene load_steps=3 format=3 uid="uid://dh8ua3r0srcsj"]
 
 [ext_resource type="PackedScene" uid="uid://fsv2txaxkuub" path="res://entities/hexgrid/hexgrid.tscn" id="1_qpkwb"]
+[ext_resource type="ButtonGroup" uid="uid://ddkb0lvan40id" path="res://entities/ui/gods/gods_button_group.tres" id="2_akt41"]
 
 [node name="Test" type="Node3D"]
 
@@ -56,17 +57,55 @@ text = "Poséidon"
 [node name="Offerings" type="HBoxContainer" parent="UI/MarginContainer/GodsTrack/GodContainer"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+[node name="CheckBox0" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
 layout_mode = 2
+button_group = ExtResource("2_akt41")
+text = "0"
+
+[node name="CheckBox1" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+layout_mode = 2
+button_group = ExtResource("2_akt41")
 text = "1"
 
 [node name="CheckBox2" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
 layout_mode = 2
+button_group = ExtResource("2_akt41")
 text = "2"
 
 [node name="CheckBox3" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
 layout_mode = 2
+button_group = ExtResource("2_akt41")
 text = "3"
+
+[node name="CheckBox4" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+layout_mode = 2
+button_group = ExtResource("2_akt41")
+text = "4"
+
+[node name="CheckBox5" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+layout_mode = 2
+button_group = ExtResource("2_akt41")
+text = "5"
+
+[node name="CheckBox6" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+layout_mode = 2
+button_group = ExtResource("2_akt41")
+text = "6"
+
+[node name="CheckBox7" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+layout_mode = 2
+button_group = ExtResource("2_akt41")
+text = "7"
+
+[node name="CheckBox8" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+layout_mode = 2
+button_group = ExtResource("2_akt41")
+text = "8"
+
+[node name="CheckBox9" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+layout_mode = 2
+button_group = ExtResource("2_akt41")
+text = "9"
 
 [node name="Commands" type="VBoxContainer" parent="UI"]
 layout_mode = 2
