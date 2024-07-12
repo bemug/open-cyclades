@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://be5tcn58e8101"]
+
+[ext_resource type="ButtonGroup" uid="uid://ddkb0lvan40id" path="res://entities/ui/god/gods_button_group.tres" id="1_n40kv"]
+[ext_resource type="Script" path="res://entities/ui/god/god.gd" id="1_u37n5"]
+
+[node name="God" type="VBoxContainer"]
+size_flags_horizontal = 0
+script = ExtResource("1_u37n5")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 16
+
+[node name="Offerings" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CheckBox0" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "0"
+
+[node name="CheckBox1" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "1"
+
+[node name="CheckBox2" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "2"
+
+[node name="CheckBox3" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "3"
+
+[node name="CheckBox4" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "4"
+
+[node name="CheckBox5" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "5"
+
+[node name="CheckBox6" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "6"
+
+[node name="CheckBox7" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "7"
+
+[node name="CheckBox8" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "8"
+
+[node name="CheckBox9" type="CheckBox" parent="Offerings"]
+layout_mode = 2
+button_group = ExtResource("1_n40kv")
+text = "9"

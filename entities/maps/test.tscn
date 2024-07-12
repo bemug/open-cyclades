@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dh8ua3r0srcsj"]
 
 [ext_resource type="PackedScene" uid="uid://fsv2txaxkuub" path="res://entities/hexgrid/hexgrid.tscn" id="1_qpkwb"]
-[ext_resource type="ButtonGroup" uid="uid://ddkb0lvan40id" path="res://entities/ui/gods/gods_button_group.tres" id="2_akt41"]
+[ext_resource type="PackedScene" uid="uid://be5tcn58e8101" path="res://entities/ui/god/god.tscn" id="2_7bifm"]
 
 [node name="Test" type="Node3D"]
 
@@ -16,29 +16,26 @@ size = 15.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.49736, 0)
 
-[node name="UI" type="PanelContainer" parent="."]
+[node name="SidePanel" type="PanelContainer" parent="."]
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 350.0
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="MarginContainer" type="MarginContainer" parent="SidePanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="GodsTrack" type="VBoxContainer" parent="UI/MarginContainer"]
+[node name="GodsTrack" type="VBoxContainer" parent="SidePanel/MarginContainer"]
 layout_mode = 2
 
-[node name="GodContainer" type="VBoxContainer" parent="UI/MarginContainer/GodsTrack"]
+[node name="Poseidon" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
 layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="Name" type="Label" parent="UI/MarginContainer/GodsTrack/GodContainer"]
-layout_mode = 2
-tooltip_text = "Poséidon offre une flotte gratuite.
+god_name = "Poséidon"
+god_tooltip = "Poséidon offre une flotte gratuite.
 -Il est possible d’acheter des flottes supplémentaires comme suit :
 • La deuxième flotte coûte 1 PO
 • La troisième 2 PO
@@ -50,74 +47,66 @@ On doit construire les flottes sur une case de mer se trouvant autour d’une î
 Déplacer ses flottes
 Pour 1 PO, le joueur peut déplacer des flottes se trouvant dans la même case de mer et les faire avancer de 3 cases au maximum. Il peut intégrer ou abandonner des flottes au cours de ce déplacement.
 Si des flottes pénètrent dans une case occupée par des flottes adverses, leur mouvement est terminé et une bataille navale s’engage immédiatement."
-mouse_filter = 0
-mouse_default_cursor_shape = 16
-text = "Poséidon"
 
-[node name="Offerings" type="HBoxContainer" parent="UI/MarginContainer/GodsTrack/GodContainer"]
+[node name="Ares" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
 layout_mode = 2
+god_name = "Ares"
+god_tooltip = "Recruter des troupes
+Arès offre une troupe gratuite.
+Il est possible d’acheter des troupes supplémen taires comme suit :
+• La deuxième troupe coûte 2 PO
+• La troisième 3 PO
+• La quatrième 4 PO.
+On ne peut pas acheter ainsi plus de 3 troupes supplémentaires dans le même tour.
+Chaque joueur ne peut pas posséder plus de 8 troupes.
+Les troupes doivent être placées sur des îles contrôlées par le joueur.
 
-[node name="CheckBox0" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+Déplacer ses troupes
+Pour 1 PO, le joueur peut déplacer tout ou partie des troupes se trouvant sur une île vers une autre île reliée par une chaîne de bateaux à sa couleur.
+• S’il débarque sur une île où sont présentes des troupes adverses, un combat s’engage immédiatement.
+• S’il débarque sur une île ne contenant aucune troupe, il s’en empare sans combat, même si cette île possède une Forteresse.
+• Si ses troupes quittent complètement l’île de départ, il doit y placer un marqueur de territoire. Cette île lui appartient tant qu’aucun adversaire n’y débarque. (Une île possédée par un joueur ne redevient donc jamais neutre).
+Dernière île : il est interdit d’attaquer la dernière île d’un joueur sauf si l’attaquant prouve qu’il peut gagner la partie en réussissant la conquête de cette île.
+Si, par exemple, le joueur qui a choisi Arès possède déjà une Métropole, il a le droit d’attaquer la dernière île d’un joueur si cette dernière contient une Métropole : en cas d’invasion réussie, il remporte la partie."
+
+[node name="Zeus" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
 layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "0"
+god_name = "Zeus"
+god_tooltip = "Recruter des Prêtres
+Zeus offre un Prêtre gratuit.
+Il est possible d’obtenir un unique Prêtre supplémentaire, pour 4 PO.
+Les Prêtres doivent être placés devant le paravent à la vue de tous.
 
-[node name="CheckBox1" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
+Effet des Prêtres :
+Chaque Prêtre diminue de 1 PO l’offrande à payer au début de chaque cycle.
+Quel que soit le nombre de Prêtres possédés, un joueur doit obligatoirement payer au moins 1 PO pour son offrande (seul l’accès à Apollon est complètement gratuit).
+
+Changer les créatures.
+Pour 1 PO, le joueur peut défausser une carte créature disponible et la remplacer par la première carte de la pioche.
+Cette action peut servir à éliminer une Créature dangereuse à moindre prix ou encore à « chercher » une Créature précise dont le joueur peut avoir besoin."
+
+[node name="Athena" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
 layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "1"
+god_name = "Athena"
+god_tooltip = "Recruter des Philosophes
+Athéna offre un Philosophe gratuit.
+Il est possible d’obtenir un unique Philosophe complémentaire pour 4 PO.
+Les Philosophes doivent être placés devant le paravent à la vue de tous.
 
-[node name="CheckBox2" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "2"
+Effet des Philosophes :
+Dès qu’un joueur obtient un 4ème Philosophe, il doit immédiatement les défausser pour créer une Métropole (voir plus bas)."
 
-[node name="CheckBox3" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "3"
-
-[node name="CheckBox4" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "4"
-
-[node name="CheckBox5" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "5"
-
-[node name="CheckBox6" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "6"
-
-[node name="CheckBox7" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "7"
-
-[node name="CheckBox8" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "8"
-
-[node name="CheckBox9" type="CheckBox" parent="UI/MarginContainer/GodsTrack/GodContainer/Offerings"]
-layout_mode = 2
-button_group = ExtResource("2_akt41")
-text = "9"
-
-[node name="Commands" type="VBoxContainer" parent="UI"]
+[node name="Commands" type="VBoxContainer" parent="SidePanel"]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Gold" type="Label" parent="UI/Commands"]
+[node name="Gold" type="Label" parent="SidePanel/Commands"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "25 PO"
 horizontal_alignment = 1
 
-[node name="EndTurnButton" type="Button" parent="UI/Commands"]
+[node name="EndTurnButton" type="Button" parent="SidePanel/Commands"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Fin du tour"
