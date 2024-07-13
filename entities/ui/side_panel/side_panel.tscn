@@ -1,40 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh8ua3r0srcsj"]
+[gd_scene load_steps=2 format=3 uid="uid://c7lrttxd3vh16"]
 
-[ext_resource type="PackedScene" uid="uid://fsv2txaxkuub" path="res://entities/hexgrid/hexgrid.tscn" id="1_qpkwb"]
-[ext_resource type="PackedScene" uid="uid://be5tcn58e8101" path="res://entities/ui/god/god.tscn" id="2_7bifm"]
-[ext_resource type="Script" path="res://entities/ui/EndTurnButton.gd" id="3_0dvn0"]
-[ext_resource type="PackedScene" uid="uid://b52yxtvarfym6" path="res://entities/player/player.tscn" id="3_j7sb7"]
+[ext_resource type="PackedScene" uid="uid://be5tcn58e8101" path="res://entities/ui/side_panel/god/god.tscn" id="1_h7jmx"]
 
-[node name="Test" type="Node3D"]
-
-[node name="Hexgrid" parent="." instance=ExtResource("1_qpkwb")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
-projection = 1
-current = true
-size = 15.0
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.49736, 0)
-
-[node name="SidePanel" type="PanelContainer" parent="."]
+[node name="SidePanel" type="PanelContainer"]
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 350.0
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="SidePanel"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="GodsTrack" type="VBoxContainer" parent="SidePanel/MarginContainer"]
+[node name="GodsTrack" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Poseidon" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
+[node name="Poseidon" parent="MarginContainer/GodsTrack" instance=ExtResource("1_h7jmx")]
 layout_mode = 2
 god_name = "Poséidon"
 god_tooltip = "Poséidon offre une flotte gratuite.
@@ -50,7 +34,7 @@ Déplacer ses flottes
 Pour 1 PO, le joueur peut déplacer des flottes se trouvant dans la même case de mer et les faire avancer de 3 cases au maximum. Il peut intégrer ou abandonner des flottes au cours de ce déplacement.
 Si des flottes pénètrent dans une case occupée par des flottes adverses, leur mouvement est terminé et une bataille navale s’engage immédiatement."
 
-[node name="Ares" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
+[node name="Ares" parent="MarginContainer/GodsTrack" instance=ExtResource("1_h7jmx")]
 layout_mode = 2
 god_name = "Ares"
 god_tooltip = "Recruter des troupes
@@ -71,7 +55,7 @@ Pour 1 PO, le joueur peut déplacer tout ou partie des troupes se trouvant sur u
 Dernière île : il est interdit d’attaquer la dernière île d’un joueur sauf si l’attaquant prouve qu’il peut gagner la partie en réussissant la conquête de cette île.
 Si, par exemple, le joueur qui a choisi Arès possède déjà une Métropole, il a le droit d’attaquer la dernière île d’un joueur si cette dernière contient une Métropole : en cas d’invasion réussie, il remporte la partie."
 
-[node name="Zeus" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
+[node name="Zeus" parent="MarginContainer/GodsTrack" instance=ExtResource("1_h7jmx")]
 layout_mode = 2
 god_name = "Zeus"
 god_tooltip = "Recruter des Prêtres
@@ -87,7 +71,7 @@ Changer les créatures.
 Pour 1 PO, le joueur peut défausser une carte créature disponible et la remplacer par la première carte de la pioche.
 Cette action peut servir à éliminer une Créature dangereuse à moindre prix ou encore à « chercher » une Créature précise dont le joueur peut avoir besoin."
 
-[node name="Athena" parent="SidePanel/MarginContainer/GodsTrack" instance=ExtResource("2_7bifm")]
+[node name="Athena" parent="MarginContainer/GodsTrack" instance=ExtResource("1_h7jmx")]
 layout_mode = 2
 god_name = "Athena"
 god_tooltip = "Recruter des Philosophes
@@ -98,37 +82,17 @@ Les Philosophes doivent être placés devant le paravent à la vue de tous.
 Effet des Philosophes :
 Dès qu’un joueur obtient un 4ème Philosophe, il doit immédiatement les défausser pour créer une Métropole (voir plus bas)."
 
-[node name="Commands" type="VBoxContainer" parent="SidePanel"]
+[node name="Commands" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SidePanel/Commands"]
+[node name="Gold" type="Label" parent="Commands"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="GoldValue" type="Label" parent="SidePanel/Commands/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "0"
+text = "25 PO"
 horizontal_alignment = 1
 
-[node name="GoldLabel" type="Label" parent="SidePanel/Commands/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "PO"
-horizontal_alignment = 1
-
-[node name="EndTurnButton" type="Button" parent="SidePanel/Commands"]
+[node name="EndTurnButton" type="Button" parent="Commands"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Fin du tour"
-script = ExtResource("3_0dvn0")
-
-[node name="Players" type="Node" parent="."]
-
-[node name="Player" parent="Players" node_paths=PackedStringArray("gold_label") instance=ExtResource("3_j7sb7")]
-gold_label = NodePath("../../SidePanel/Commands/HBoxContainer/GoldValue")
-
-[connection signal="button_down" from="SidePanel/Commands/EndTurnButton" to="SidePanel/Commands/EndTurnButton" method="_on_button_down"]
-[connection signal="end_turn" from="SidePanel/Commands/EndTurnButton" to="Players/Player" method="_on_end_turn_button_end_turn"]
