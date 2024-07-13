@@ -128,6 +128,7 @@ script = ExtResource("3_0dvn0")
 [node name="Players" type="Node" parent="."]
 
 [node name="Player" parent="Players" node_paths=PackedStringArray("gold_label") instance=ExtResource("3_j7sb7")]
+unique_name_in_owner = true
 gold_label = NodePath("../../SidePanel/Commands/HBoxContainer/GoldValue")
 
 [connection signal="button_down" from="SidePanel/Commands/EndTurnButton" to="SidePanel/Commands/EndTurnButton" method="_on_button_down"]

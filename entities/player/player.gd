@@ -14,4 +14,5 @@ func _on_end_turn_button_end_turn() -> void:
 			if offering.button_pressed:
 				gold -= int(offering.text)
 				break
+	assert(gold >= 0, "Gold amount is negative")
 	gold_label.text = str(gold)
