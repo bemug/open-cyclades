@@ -12,7 +12,7 @@ layout_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 16
 
-[node name="Offerings" type="HBoxContainer" parent="."]
+[node name="Offerings" type="HBoxContainer" parent="." groups=["offerings"]]
 layout_mode = 2
 
 [node name="CheckBox0" type="CheckBox" parent="Offerings"]

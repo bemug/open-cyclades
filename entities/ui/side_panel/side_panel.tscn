@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7lrttxd3vh16"]
+[gd_scene load_steps=3 format=3 uid="uid://c7lrttxd3vh16"]
 
 [ext_resource type="PackedScene" uid="uid://be5tcn58e8101" path="res://entities/ui/side_panel/god/god.tscn" id="1_h7jmx"]
+[ext_resource type="Script" path="res://entities/ui/side_panel/side_panel.gd" id="1_i30fw"]
 
 [node name="SidePanel" type="PanelContainer"]
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 350.0
 grow_vertical = 2
+script = ExtResource("1_i30fw")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -29,7 +31,7 @@ god_tooltip = "Poséidon offre une flotte gratuite.
 On ne peut pas acheter plus de 3 flottes supplémentaires dans le même tour.
 Chaque joueur ne peut pas posséder plus de 8 flottes.
 On doit construire les flottes sur une case de mer se trouvant autour d’une île appartenant au joueur. Cette case doit être vide ou occupée par des flottes appartenant à ce même joueur.
- 
+
 Déplacer ses flottes
 Pour 1 PO, le joueur peut déplacer des flottes se trouvant dans la même case de mer et les faire avancer de 3 cases au maximum. Il peut intégrer ou abandonner des flottes au cours de ce déplacement.
 Si des flottes pénètrent dans une case occupée par des flottes adverses, leur mouvement est terminé et une bataille navale s’engage immédiatement."
@@ -86,13 +88,26 @@ Dès qu’un joueur obtient un 4ème Philosophe, il doit immédiatement les déf
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Gold" type="Label" parent="Commands"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Commands"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "25 PO"
+size_flags_vertical = 0
+
+[node name="GoldValue" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+horizontal_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PO"
 horizontal_alignment = 1
 
 [node name="EndTurnButton" type="Button" parent="Commands"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Fin du tour"
+
+[connection signal="button_down" from="Commands/EndTurnButton" to="." method="_on_end_turn_button_button_down"]
