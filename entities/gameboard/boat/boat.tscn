@@ -1,29 +1,79 @@
-[gd_scene load_steps=5 format=3 uid="uid://be5paucytcij1"]
-
-[ext_resource type="Script" path="res://entities/gameboard/boat/boat.gd" id="1_6pk3h"]
+[gd_scene load_steps=10 format=3 uid="uid://be5paucytcij1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmggd"]
-albedo_color = Color(0.690833, 1, 0.47, 1)
+albedo_color = Color(0.25, 0.188542, 0.1025, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_2bv4o"]
+size = Vector3(1, 1, 3)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yrhu5"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_5koed"]
+top_radius = 0.1
+bottom_radius = 0.05
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_575sj"]
+albedo_color = Color(0.9, 0.9, 0.729, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_6kkct"]
+size = Vector3(1.5, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qjwas"]
+size = Vector3(1.5, 1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1v6cq"]
+size = Vector3(0.2, 0.4, 0.05)
+
+[sub_resource type="PrismMesh" id="PrismMesh_fmdfj"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_oscwa"]
+size = Vector3(1, 0.5, 0.5)
 
 [node name="Boat" type="Node3D"]
-script = ExtResource("1_6pk3h")
 
-[node name="BoatMeshPlaceholder" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496544, 0)
+[node name="Meshes" type="Node3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="BoatMeshPlaceholder" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.131335, 0)
 material_override = SubResource("StandardMaterial3D_lmggd")
-transparency = 0.25
 mesh = SubResource("PrismMesh_2bv4o")
+skeleton = NodePath("../..")
 
-[node name="SelectionArea" type="Area3D" parent="."]
+[node name="BoatMeshPlaceholder4" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 1.2987, 0)
+material_override = SubResource("StandardMaterial3D_lmggd")
+mesh = SubResource("CylinderMesh_5koed")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SelectionArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503136, 0)
-shape = SubResource("BoxShape3D_yrhu5")
+[node name="BoatMeshPlaceholder5" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-0.0116773, -0.00322603, -0.999926, -0.981723, -0.189931, 0.0120775, -0.189956, 0.981792, -0.000949194, -0.00577854, 1.37209, 0.889285)
+material_override = SubResource("StandardMaterial3D_575sj")
+mesh = SubResource("PrismMesh_6kkct")
+skeleton = NodePath("../..")
 
-[connection signal="input_event" from="SelectionArea" to="." method="_on_selection_area_input_event"]
-[connection signal="mouse_entered" from="SelectionArea" to="." method="_on_selection_area_mouse_entered"]
-[connection signal="mouse_exited" from="SelectionArea" to="." method="_on_selection_area_mouse_exited"]
+[node name="BoatMeshPlaceholder6" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-0.0359506, -0.0079218, -0.999322, -0.999051, 0.024867, 0.0357437, 0.024567, 0.999659, -0.00880827, -0.0227062, 1.55614, -0.530899)
+material_override = SubResource("StandardMaterial3D_575sj")
+mesh = SubResource("BoxMesh_qjwas")
+skeleton = NodePath("../..")
+
+[node name="BoatMeshPlaceholder7" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-0.0359506, -0.0079218, -0.999322, -0.999051, 0.024867, 0.0357437, 0.024567, 0.999659, -0.00880827, 0.000792831, 2.47653, -0.256156)
+material_override = SubResource("StandardMaterial3D_575sj")
+mesh = SubResource("BoxMesh_1v6cq")
+skeleton = NodePath("../..")
+
+[node name="BoatMeshPlaceholder2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.55063e-08, -0.978078, 0.208236, 1.82046e-08, 0.208236, 0.978079, -0.00904571, 0.159138, 1.66225)
+material_override = SubResource("StandardMaterial3D_lmggd")
+mesh = SubResource("PrismMesh_fmdfj")
+
+[node name="BoatMeshPlaceholder3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-1, 8.74227e-08, 6.50153e-15, 5.579e-08, 0.638163, 0.769901, 6.73069e-08, 0.769901, -0.638163, -0.00904571, 0.698181, 2.17101)
+material_override = SubResource("StandardMaterial3D_lmggd")
+mesh = SubResource("PrismMesh_oscwa")
+
+[node name="BoatMeshPlaceholder8" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.999722, 0.00490953, 0.0230603, -7.88418e-08, -0.978079, 0.208236, 0.0235771, -0.208178, -0.977807, 0.00449794, 0.159138, -1.29261)
+material_override = SubResource("StandardMaterial3D_lmggd")
+mesh = SubResource("PrismMesh_fmdfj")
