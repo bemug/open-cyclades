@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh8ua3r0srcsj"]
 
 [ext_resource type="PackedScene" uid="uid://fsv2txaxkuub" path="res://entities/hexgrid/hexgrid.tscn" id="1_qpkwb"]
-[ext_resource type="PackedScene" uid="uid://be5tcn58e8101" path="res://entities/ui/god/god.tscn" id="2_7bifm"]
+[ext_resource type="PackedScene" uid="uid://be5tcn58e8101" path="res://entities/ui/side_panel/god/god.tscn" id="2_7bifm"]
 [ext_resource type="Script" path="res://entities/ui/EndTurnButton.gd" id="3_0dvn0"]
 [ext_resource type="PackedScene" uid="uid://b52yxtvarfym6" path="res://entities/player/player.tscn" id="3_j7sb7"]
 

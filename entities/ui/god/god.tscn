@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://be5tcn58e8101"]
 
-[ext_resource type="ButtonGroup" uid="uid://ddkb0lvan40id" path="res://entities/ui/god/gods_button_group.tres" id="1_n40kv"]
+[ext_resource type="ButtonGroup" uid="uid://ddkb0lvan40id" path="res://entities/ui/side_panel/god/gods_button_group.tres" id="1_n40kv"]
 [ext_resource type="Script" path="res://entities/ui/god/god.gd" id="1_u37n5"]
 
 [node name="God" type="VBoxContainer"]
