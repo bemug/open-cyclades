@@ -13,4 +13,4 @@ config_version=5
 config/name="open-cyclades"
 run/main_scene="res://entities/maps/test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.png"
+config/icon="res://resources/icon.svg"
