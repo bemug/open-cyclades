@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fsv2txaxkuub"]
+
+[ext_resource type="Script" path="res://entities/gameboard/hexgrid/hexgrid.gd" id="1_rew4t"]
+
+[node name="Hexgrid" type="Node3D"]
+script = ExtResource("1_rew4t")

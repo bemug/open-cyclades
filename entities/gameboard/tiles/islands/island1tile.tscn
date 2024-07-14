@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2odlo4v2fcvi"]
+[gd_scene load_steps=6 format=3 uid="uid://dd6xfgrl7hu0t"]
 
-[ext_resource type="Script" path="res://entities/hextile/hextile.gd" id="1_a4ttv"]
+[ext_resource type="Script" path="res://entities/gameboard/hextile_deprecated/hextile.gd" id="1_l8k01"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yiiau"]
-albedo_color = Color(0.305295, 0.639011, 0.856898, 1)
+albedo_color = Color(0.402667, 0.689056, 0.297564, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_xnh78"]
 top_radius = 1.0
@@ -18,24 +18,31 @@ albedo_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 height = 0.1
 radius = 1.0
 
-[node name="Hextile" type="Node3D"]
-script = ExtResource("1_a4ttv")
+[node name="Island1Tile" type="Node3D"]
+script = ExtResource("1_l8k01")
 
-[node name="HexTileInnerMesh" type="MeshInstance3D" parent="."]
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="TileA" type="Node3D" parent="Meshes"]
+
+[node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileA"]
 transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_yiiau")
 transparency = 0.5
 mesh = SubResource("CylinderMesh_xnh78")
+skeleton = NodePath("../../..")
 
-[node name="HexTileBlackEdges" type="MeshInstance3D" parent="."]
+[node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileA"]
 transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_17nfd")
 mesh = SubResource("CylinderMesh_xnh78")
+skeleton = NodePath("../../..")
 
 [node name="Area3D" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionA" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_hq5e2")
 
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

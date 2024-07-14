@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvdnvtd1c1bse"]
+
+[ext_resource type="Script" path="res://entities/gameboard/hextile_deprecated/hextile.gd" id="1_dypdm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp6jd"]
+albedo_color = Color(0.402667, 0.689056, 0.297564, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v7s1k"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.1
+radial_segments = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tupkk"]
+albedo_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5kvtb"]
+height = 0.1
+radius = 1.0
+
+[node name="Island4TilesIShape" type="Node3D"]
+script = ExtResource("1_dypdm")
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="TileA" type="Node3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.299, 0, -2.25)
+
+[node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileA"]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_cp6jd")
+transparency = 0.5
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileA"]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_tupkk")
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="TileB" type="Node3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433, 0, -0.75)
+
+[node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileB"]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_cp6jd")
+transparency = 0.5
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileB"]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_tupkk")
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="TileC" type="Node3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433, 0, 0.75)
+
+[node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileC"]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_cp6jd")
+transparency = 0.5
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileC"]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_tupkk")
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="TileD" type="Node3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.299, 0, 2.25)
+
+[node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileD"]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_cp6jd")
+transparency = 0.5
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileD"]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_tupkk")
+mesh = SubResource("CylinderMesh_v7s1k")
+skeleton = NodePath("../../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionB" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433, 0, -0.75)
+shape = SubResource("CylinderShape3D_5kvtb")
+
+[node name="CollisionD" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.299, 0, 2.25)
+shape = SubResource("CylinderShape3D_5kvtb")
+
+[node name="CollisionA" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.299, 0, -2.25)
+shape = SubResource("CylinderShape3D_5kvtb")
+
+[node name="CollisionC" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433, 0, 0.75)
+shape = SubResource("CylinderShape3D_5kvtb")
