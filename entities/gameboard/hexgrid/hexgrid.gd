@@ -49,7 +49,6 @@ func load_board() -> void:
 				tile_scene = tile_scene_resource.instantiate()
 				var tile_position: Vector3 = hex_to_pixel(island_info.get_island_barycenter())
 				tile_scene.position = tile_position
-				print(island_info.orientation * PI / 6.0)
 				var tile_direction: Vector3 = Vector3(0, 0, -1).rotated(Vector3.UP, - 2 * island_info.orientation * PI / 6.0)
 				tile_scene.look_at_from_position(tile_position, tile_position + tile_direction, Vector3.UP)
 				for position in island_info.positions:

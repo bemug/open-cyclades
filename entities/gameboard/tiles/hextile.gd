@@ -21,12 +21,15 @@ signal tile_selected(tile)
 # ------------------------------------------------------------------------------
 func highlight(b: bool) -> void :
 	if(b):
-		pass
-		# TODO
-		# $Meshes.transparency = 0 
+		for nodes in $Meshes.get_children(): 
+			for mesh in nodes.get_children():
+				if(mesh.name == "InnerMesh"): # TODO hardcoded for the moment
+					mesh.transparency = 0 
 	else: 
-		pass
-		# $Meshes.transparency = 0.50
+		for nodes in $Meshes.get_children(): 
+			for mesh in nodes.get_children():
+				if(mesh.name == "InnerMesh"): # TODO hardcoded for the moment
+					mesh.transparency = 0.50 
 		
 # ------------------------------------------------------------------------------
 # Listeners (connected to external signals)

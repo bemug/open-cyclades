@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://fbvn4f7tqmpl"]
 
-[ext_resource type="Script" path="res://entities/gameboard/hextile_deprecated/hextile.gd" id="1_rxxfe"]
+[ext_resource type="Script" path="res://entities/gameboard/tiles/hextile.gd" id="1_ul540"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yiiau"]
 albedo_color = Color(0.305295, 0.639011, 0.856898, 1)
@@ -19,7 +19,7 @@ height = 0.1
 radius = 1.0
 
 [node name="WaterTile" type="Node3D"]
-script = ExtResource("1_rxxfe")
+script = ExtResource("1_ul540")
 
 [node name="Meshes" type="Node3D" parent="."]
 

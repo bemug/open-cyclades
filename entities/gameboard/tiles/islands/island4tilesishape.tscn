@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cvdnvtd1c1bse"]
 
-[ext_resource type="Script" path="res://entities/gameboard/hextile_deprecated/hextile.gd" id="1_dypdm"]
+[ext_resource type="Script" path="res://entities/gameboard/tiles/hextile.gd" id="1_qowol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp6jd"]
 albedo_color = Color(0.402667, 0.689056, 0.297564, 1)
@@ -19,7 +19,7 @@ height = 0.1
 radius = 1.0
 
 [node name="Island4TilesIShape" type="Node3D"]
-script = ExtResource("1_dypdm")
+script = ExtResource("1_qowol")
 
 [node name="Meshes" type="Node3D" parent="."]
 
