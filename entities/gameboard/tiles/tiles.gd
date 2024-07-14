@@ -1,3 +1,4 @@
+@tool
 class_name Tiles
 # Static class. Contains any preloaded tile scenes.
 # TODO: (later) load them in game loading phase.
