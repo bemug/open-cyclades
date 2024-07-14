@@ -1,4 +1,5 @@
 #Reference : https://www.redblobgames.com/grids/hexagons/
+@tool
 extends Node3D
 
 @export var q_max: int = 3

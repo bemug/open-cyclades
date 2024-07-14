@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://be5paucytcij1"]
+
+[ext_resource type="Script" path="res://entities/boat/boat.gd" id="1_6pk3h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmggd"]
+albedo_color = Color(0.690833, 1, 0.47, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_2bv4o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yrhu5"]
+
+[node name="Boat" type="Node3D"]
+script = ExtResource("1_6pk3h")
+
+[node name="BoatMeshPlaceholder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496544, 0)
+material_override = SubResource("StandardMaterial3D_lmggd")
+transparency = 0.25
+mesh = SubResource("PrismMesh_2bv4o")
+
+[node name="SelectionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SelectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503136, 0)
+shape = SubResource("BoxShape3D_yrhu5")
+
+[connection signal="input_event" from="SelectionArea" to="." method="_on_selection_area_input_event"]
+[connection signal="mouse_entered" from="SelectionArea" to="." method="_on_selection_area_mouse_entered"]
+[connection signal="mouse_exited" from="SelectionArea" to="." method="_on_selection_area_mouse_exited"]
