@@ -89,18 +89,22 @@ skeleton = NodePath("../../..")
 
 [node name="Area3D" type="Area3D" parent="."]
 
+[node name="CollisionA" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.299, 0, -2.25)
+shape = SubResource("CylinderShape3D_5kvtb")
+
 [node name="CollisionB" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433, 0, -0.75)
+shape = SubResource("CylinderShape3D_5kvtb")
+
+[node name="CollisionC" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433, 0, 0.75)
 shape = SubResource("CylinderShape3D_5kvtb")
 
 [node name="CollisionD" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.299, 0, 2.25)
 shape = SubResource("CylinderShape3D_5kvtb")
 
-[node name="CollisionA" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.299, 0, -2.25)
-shape = SubResource("CylinderShape3D_5kvtb")
-
-[node name="CollisionC" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433, 0, 0.75)
-shape = SubResource("CylinderShape3D_5kvtb")
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
