@@ -1,6 +1,6 @@
 extends PanelContainer
 
-func _on_player_gold_changed(gold: int) -> void:
+func _on_player_gold_changed(gold: String) -> void:
 	$Commands/HBoxContainer/GoldValue.text = str(gold)
 
 func _on_end_turn_button_button_down() -> void:
@@ -15,5 +15,5 @@ func _on_end_turn_button_button_down() -> void:
 		for offering : CheckBox in offerings.get_children():
 			offering.disabled = false
 			offering.button_pressed = false
-			if %Player.gold < int(offering.text):
+			if %Player.gold() < int(offering.text):
 				offering.disabled = true
