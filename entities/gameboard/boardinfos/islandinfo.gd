@@ -11,7 +11,7 @@ var positions: Array[Vector2] # (U, V) positions of every tile of the island
 # ------------------------------------------------------------------------------
 # Constructor
 # ------------------------------------------------------------------------------
-func _init(id: int, type: Tiles.Type, orientation: Tiles.Orientation, positions: Array[Vector2]):
+func _init(id: int, type: Tiles.Type, orientation: Tiles.Orientation, positions: Array[Vector2]) -> void:
 	self.id = id
 	self.type = type
 	self.orientation = orientation
@@ -22,9 +22,9 @@ func _init(id: int, type: Tiles.Type, orientation: Tiles.Orientation, positions:
 # ------------------------------------------------------------------------------
 # Coordinate of an island is always the barycenter of all island's tiles
 func get_island_barycenter() -> Vector2:
-	var number_of_tiles = positions.size()
-	var result = Vector2(0, 0)
-	for position in positions :
+	var number_of_tiles: int = positions.size()
+	var result: Vector2 = Vector2(0, 0)
+	for position: Vector2 in positions :
 		result += position 
 	result /= number_of_tiles
 

@@ -8,14 +8,14 @@ class_name BoardInfo # Abstract class : use implementations
 # Cube coordinates as Vector3. X=Q, Y=R
 var q_param_min: int
 var q_param_max: int
-var r_param_min : int
-var r_param_max : int
+var r_param_min: int
+var r_param_max: int
 var islands: Array[IslandInfo]
 
 # ------------------------------------------------------------------------------
 # Constructor
 # ------------------------------------------------------------------------------
-func _init(q_param_min: int, q_param_max: int, r_param_min: int, r_param_max: int, islands: Array[IslandInfo]):
+func _init(q_param_min: int, q_param_max: int, r_param_min: int, r_param_max: int, islands: Array[IslandInfo]) -> void:
 	self.q_param_min = q_param_min
 	self.q_param_max = q_param_max
 	self.r_param_min = r_param_min
@@ -26,9 +26,9 @@ func _init(q_param_min: int, q_param_max: int, r_param_min: int, r_param_max: in
 # Public Methods
 # ------------------------------------------------------------------------------
 # @return Vector2 or null if coordinates does not correspond to an island tile
-func get_island_info(coordinates: Vector2):
-	for island_info in islands:
-		for position in island_info.positions:
+func get_island_info(coordinates: Vector2) -> IslandInfo:
+	for island_info: IslandInfo in islands:
+		for position: Vector2 in island_info.positions:
 			if (position == coordinates):
 				return island_info
 	return null
