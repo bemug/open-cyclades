@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvdnvtd1c1bse"]
+[gd_scene load_steps=8 format=3 uid="uid://cvdnvtd1c1bse"]
 
 [ext_resource type="Script" path="res://entities/board/tiles/hextile.gd" id="1_qowol"]
+[ext_resource type="PackedScene" uid="uid://d3ycc2ci8v7tv" path="res://entities/board/buildings/small_building_spot.tscn" id="2_byo4l"]
+[ext_resource type="PackedScene" uid="uid://cdpy806hm53tu" path="res://entities/board/buildings/acropolis_spot.tscn" id="3_p14o6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp6jd"]
 albedo_color = Color(0.402667, 0.689056, 0.297564, 1)
@@ -86,6 +88,21 @@ transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_tupkk")
 mesh = SubResource("CylinderMesh_v7s1k")
 skeleton = NodePath("../../..")
+
+[node name="SmallBuildingSpot" parent="Meshes" instance=ExtResource("2_byo4l")]
+transform = Transform3D(-0.502145, 0, 0.864784, 0, 1, 0, -0.864784, 0, -0.502145, 0.229265, 0, 0.398981)
+
+[node name="SmallBuildingSpot3" parent="Meshes" instance=ExtResource("2_byo4l")]
+transform = Transform3D(-0.502145, 0, 0.864784, 0, 1, 0, -0.864784, 0, -0.502145, 0.636699, 0, 1.10401)
+
+[node name="Acropolis" parent="Meshes" instance=ExtResource("3_p14o6")]
+transform = Transform3D(-0.502145, 0, 0.864784, 0, 1, 0, -0.864784, 0, -0.502145, 0.440292, 0, 0.750339)
+
+[node name="SmallBuildingSpot2" parent="Meshes" instance=ExtResource("2_byo4l")]
+transform = Transform3D(-0.502145, 0, 0.864784, 0, 1, 0, -0.864784, 0, -0.502145, 1.4919, 0, 2.56463)
+
+[node name="SmallBuildingSpot4" parent="Meshes" instance=ExtResource("2_byo4l")]
+transform = Transform3D(-0.502145, 0, 0.864784, 0, 1, 0, -0.864784, 0, -0.502145, -1.10477, 0, -1.91165)
 
 [node name="Area3D" type="Area3D" parent="."]
 

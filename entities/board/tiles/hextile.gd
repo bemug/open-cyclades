@@ -13,16 +13,14 @@ signal tile_selected(tile: Hextile)
 # Public Methods
 # ------------------------------------------------------------------------------
 func highlight(b: bool) -> void :
-	if(b):
-		for nodes: Node in $Meshes.get_children(): 
-			for mesh: MeshInstance3D in nodes.get_children():
-				if(mesh.name == "InnerMesh"): # TODO hardcoded for the moment
-					mesh.transparency = 0 
-	else: 
-		for nodes: Node in $Meshes.get_children(): 
-			for mesh: MeshInstance3D in nodes.get_children():
-				if(mesh.name == "InnerMesh"): # TODO hardcoded for the moment
-					mesh.transparency = 0.50 
+		for node: Node in $Meshes.get_children(): 
+			for child: Node in node.get_children():
+				if(child.name == "InnerMesh"): # TODO hardcoded for the moment
+					var mesh: MeshInstance3D = child as MeshInstance3D
+					if(b):
+						mesh.transparency = 0 
+					else: 
+						mesh.transparency = 0.50 
 		
 # ------------------------------------------------------------------------------
 # Listeners (connected to external signals)

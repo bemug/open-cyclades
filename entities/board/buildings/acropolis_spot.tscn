@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdpy806hm53tu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t2yd5"]
+size = Vector3(1, 0.1, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p16pv"]
+albedo_color = Color(0.72, 0.693, 0.54, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vda2v"]
+size = Vector3(0.05, 0.1, 0.85)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tkquu"]
+size = Vector3(1.05, 0.1, 1.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkh07"]
+albedo_color = Color(0.13875, 0.15, 0.1365, 1)
+
+[node name="Acropolis" type="Node3D"]
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0.01, 0.5)
+mesh = SubResource("BoxMesh_t2yd5")
+surface_material_override/0 = SubResource("StandardMaterial3D_p16pv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0.01, -0.5)
+mesh = SubResource("BoxMesh_t2yd5")
+surface_material_override/0 = SubResource("StandardMaterial3D_p16pv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0.499911, 0.01, 0)
+mesh = SubResource("BoxMesh_vda2v")
+surface_material_override/0 = SubResource("StandardMaterial3D_p16pv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -0.5, 0.01, 0)
+mesh = SubResource("BoxMesh_vda2v")
+surface_material_override/0 = SubResource("StandardMaterial3D_p16pv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0.005, 0)
+mesh = SubResource("BoxMesh_tkquu")
+surface_material_override/0 = SubResource("StandardMaterial3D_wkh07")
