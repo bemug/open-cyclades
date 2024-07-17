@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh8ua3r0srcsj"]
 
-[ext_resource type="PackedScene" uid="uid://b6g5loncn2v27" path="res://entities/gameboard/gameboard.tscn" id="1_qwt1r"]
-[ext_resource type="PackedScene" uid="uid://c7lrttxd3vh16" path="res://entities/ui/side_panel/side_panel.tscn" id="2_2nywb"]
-[ext_resource type="PackedScene" uid="uid://b52yxtvarfym6" path="res://entities/player/player.tscn" id="3_j7sb7"]
+[ext_resource type="PackedScene" uid="uid://b6g5loncn2v27" path="res://entities/board/gameboard.tscn" id="1_is6ul"]
+[ext_resource type="PackedScene" uid="uid://c7lrttxd3vh16" path="res://entities/ui/side_panel/side_panel.tscn" id="2_0kvtj"]
+[ext_resource type="PackedScene" uid="uid://b52yxtvarfym6" path="res://entities/player/player.tscn" id="3_lsueo"]
 
 [node name="Test" type="Node3D"]
 
-[node name="Gameboard" parent="." instance=ExtResource("1_qwt1r")]
+[node name="Gameboard" parent="." instance=ExtResource("1_is6ul")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
@@ -17,11 +17,11 @@ size = 15.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.49736, 0)
 
-[node name="SidePanel" parent="." instance=ExtResource("2_2nywb")]
+[node name="SidePanel" parent="." instance=ExtResource("2_0kvtj")]
 
 [node name="Players" type="Node" parent="."]
 
-[node name="Player" parent="Players" instance=ExtResource("3_j7sb7")]
+[node name="Player" parent="Players" instance=ExtResource("3_lsueo")]
 unique_name_in_owner = true
 
 [connection signal="gold_changed" from="Players/Player" to="SidePanel" method="_on_player_gold_changed"]

@@ -5,14 +5,14 @@ class_name Tiles
 # ------------------------------------------------------------------------------
 # Tile Type
 # ------------------------------------------------------------------------------
-static var WATER_TILE : PackedScene = preload("res://entities/gameboard/tiles/water/watertile.tscn")
-static var ISLAND_1TILE : PackedScene = preload("res://entities/gameboard/tiles/islands/island1tile.tscn")
-static var ISLAND_2TILES : PackedScene = preload("res://entities/gameboard/tiles/islands/island2tiles.tscn")
-static var ISLAND_3TILES_ISHAPE : PackedScene = preload("res://entities/gameboard/tiles/islands/island3tilesishape.tscn")
-static var ISLAND_3TILES_VSHAPE : PackedScene = preload("res://entities/gameboard/tiles/islands/island3tilesvshape.tscn")
-static var ISLAND_3TILES_TRIANGLE : PackedScene = preload("res://entities/gameboard/tiles/islands/island3tilestriangle.tscn")
-static var ISLAND_4TILES_ISHAPE : PackedScene = preload("res://entities/gameboard/tiles/islands/island4tilesishape.tscn")
-static var ISLAND_4TILES_SQUARE : PackedScene = preload("res://entities/gameboard/tiles/islands/island4tilessquare.tscn")
+static var WATER_TILE : PackedScene = preload("res://entities/board/tiles/water/watertile.tscn")
+static var ISLAND_1TILE : PackedScene = preload("res://entities/board/tiles/islands/island1tile.tscn")
+static var ISLAND_2TILES : PackedScene = preload("res://entities/board/tiles/islands/island2tiles.tscn")
+static var ISLAND_3TILES_ISHAPE : PackedScene = preload("res://entities/board/tiles/islands/island3tilesishape.tscn")
+static var ISLAND_3TILES_VSHAPE : PackedScene = preload("res://entities/board/tiles/islands/island3tilesvshape.tscn")
+static var ISLAND_3TILES_TRIANGLE : PackedScene = preload("res://entities/board/tiles/islands/island3tilestriangle.tscn")
+static var ISLAND_4TILES_ISHAPE : PackedScene = preload("res://entities/board/tiles/islands/island4tilesishape.tscn")
+static var ISLAND_4TILES_SQUARE : PackedScene = preload("res://entities/board/tiles/islands/island4tilessquare.tscn")
 
 enum Type {WaterTile, 
 	Island1Tile, 

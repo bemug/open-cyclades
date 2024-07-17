@@ -1,89 +1,87 @@
-[gd_scene load_steps=6 format=3 uid="uid://drwpuvppadvma"]
+[gd_scene load_steps=6 format=3 uid="uid://b4pcfgftgo5e5"]
 
-[ext_resource type="Script" path="res://entities/gameboard/tiles/hextile.gd" id="1_48rwj"]
+[ext_resource type="Script" path="res://entities/board/tiles/hextile.gd" id="1_busu5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kdff"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i82gl"]
 albedo_color = Color(0.402667, 0.689056, 0.297564, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_akrbw"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_ths01"]
 top_radius = 1.0
 bottom_radius = 1.0
 height = 0.1
 radial_segments = 6
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl73i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjuit"]
 albedo_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_lm4ft"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hs0js"]
 height = 0.1
 radius = 1.0
 
-[node name="Island3TilesVShape" type="Node3D"]
-script = ExtResource("1_48rwj")
+[node name="Island3TilesIShape" type="Node3D"]
+script = ExtResource("1_busu5")
 
 [node name="Meshes" type="Node3D" parent="."]
 
 [node name="TileA" type="Node3D" parent="Meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.155, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866, 0, -1.5)
 
 [node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileA"]
 transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_7kdff")
+material_override = SubResource("StandardMaterial3D_i82gl")
 transparency = 0.5
-mesh = SubResource("CylinderMesh_akrbw")
+mesh = SubResource("CylinderMesh_ths01")
 skeleton = NodePath("../../..")
 
 [node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileA"]
 transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_cl73i")
-mesh = SubResource("CylinderMesh_akrbw")
+material_override = SubResource("StandardMaterial3D_qjuit")
+mesh = SubResource("CylinderMesh_ths01")
 skeleton = NodePath("../../..")
 
 [node name="TileB" type="Node3D" parent="Meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289, 0, 0.5)
 
 [node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileB"]
 transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_7kdff")
+material_override = SubResource("StandardMaterial3D_i82gl")
 transparency = 0.5
-mesh = SubResource("CylinderMesh_akrbw")
+mesh = SubResource("CylinderMesh_ths01")
 skeleton = NodePath("../../..")
 
 [node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileB"]
 transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_cl73i")
-mesh = SubResource("CylinderMesh_akrbw")
+material_override = SubResource("StandardMaterial3D_qjuit")
+mesh = SubResource("CylinderMesh_ths01")
 skeleton = NodePath("../../..")
 
 [node name="TileC" type="Node3D" parent="Meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.443, 0, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.866, 0, 1.5)
 
 [node name="InnerMesh" type="MeshInstance3D" parent="Meshes/TileC"]
 transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_7kdff")
+material_override = SubResource("StandardMaterial3D_i82gl")
 transparency = 0.5
-mesh = SubResource("CylinderMesh_akrbw")
+mesh = SubResource("CylinderMesh_ths01")
 skeleton = NodePath("../../..")
 
 [node name="BlackEdges" type="MeshInstance3D" parent="Meshes/TileC"]
 transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_cl73i")
-mesh = SubResource("CylinderMesh_akrbw")
+material_override = SubResource("StandardMaterial3D_qjuit")
+mesh = SubResource("CylinderMesh_ths01")
 skeleton = NodePath("../../..")
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionA" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.155, 0, -1)
-shape = SubResource("CylinderShape3D_lm4ft")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866, 0, -1.5)
+shape = SubResource("CylinderShape3D_hs0js")
 
 [node name="CollisionB" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289, 0, 0.5)
-shape = SubResource("CylinderShape3D_lm4ft")
+shape = SubResource("CylinderShape3D_hs0js")
 
 [node name="CollisionC" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.443, 0, 0.5)
-shape = SubResource("CylinderShape3D_lm4ft")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.866, 0, 1.5)
+shape = SubResource("CylinderShape3D_hs0js")
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]

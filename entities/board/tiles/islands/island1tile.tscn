@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://fbvn4f7tqmpl"]
+[gd_scene load_steps=6 format=3 uid="uid://dd6xfgrl7hu0t"]
 
-[ext_resource type="Script" path="res://entities/gameboard/tiles/hextile.gd" id="1_ul540"]
+[ext_resource type="Script" path="res://entities/board/tiles/hextile.gd" id="1_vok66"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yiiau"]
-albedo_color = Color(0.305295, 0.639011, 0.856898, 1)
+albedo_color = Color(0.402667, 0.689056, 0.297564, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_xnh78"]
 top_radius = 1.0
@@ -18,8 +18,8 @@ albedo_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 height = 0.1
 radius = 1.0
 
-[node name="WaterTile" type="Node3D"]
-script = ExtResource("1_ul540")
+[node name="Island1Tile" type="Node3D"]
+script = ExtResource("1_vok66")
 
 [node name="Meshes" type="Node3D" parent="."]
 

@@ -1,4 +1,4 @@
-class_name BoardInfo # Abstract class : use implementations
+class_name ArchipelagoConfiguration # Abstract class : use implementations
 # Define content of any tile of the board 
 # (if it is water, an island, what type of island, etc.).
 # ------------------------------------------------------------------------------

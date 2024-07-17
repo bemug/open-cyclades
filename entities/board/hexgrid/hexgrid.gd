@@ -5,7 +5,7 @@ extends Node3D
 # ------------------------------------------------------------------------------
 # Properties
 # ------------------------------------------------------------------------------
-var board_info: BoardInfo = Board5Players.new()
+var archipelago_config: ArchipelagoConfiguration = FivePlayersArchipelago.new()
 var tiles : Dictionary = {} # Map<2DCoordinates, TileScene>
 var tile_size : float = 1
 	
@@ -25,10 +25,10 @@ func _process(delta: float) -> void:
 # Board Loader
 # ------------------------------------------------------------------------------
 func load_board() -> void:
-	var q_min: int = board_info.q_param_min
-	var q_max: int = board_info.q_param_max
-	var r_min: int = board_info.r_param_min
-	var r_max: int = board_info.r_param_max
+	var q_min: int = archipelago_config.q_param_min
+	var q_max: int = archipelago_config.q_param_max
+	var r_min: int = archipelago_config.r_param_min
+	var r_max: int = archipelago_config.r_param_max
 	for q: int in range(q_min, q_max + 1):
 		for r: int in range(r_min, r_max + 1):
 			var s : int = -q-r
@@ -41,7 +41,7 @@ func load_board() -> void:
 				continue
 				
 			# Instantiate tile scene on this position
-			var island_info: IslandInfo = board_info.get_island_info(coord)
+			var island_info: IslandInfo = archipelago_config.get_island_info(coord)
 			
 			var tile_scene: Node3D
 			if(island_info != null):

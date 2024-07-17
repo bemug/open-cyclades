@@ -1,5 +1,5 @@
-class_name Board5Players
-extends BoardInfo
+class_name FivePlayersArchipelago
+extends ArchipelagoConfiguration
 # ------------------------------------------------------------------------------
 # Constructor
 # ------------------------------------------------------------------------------

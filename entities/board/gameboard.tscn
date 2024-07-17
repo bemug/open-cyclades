@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6g5loncn2v27"]
 
-[ext_resource type="PackedScene" uid="uid://fsv2txaxkuub" path="res://entities/gameboard/hexgrid/hexgrid.tscn" id="1_ojjhl"]
+[ext_resource type="PackedScene" uid="uid://fsv2txaxkuub" path="res://entities/board/hexgrid/hexgrid.tscn" id="1_ojjhl"]
 
 [node name="Gameboard" type="Node3D"]
 
