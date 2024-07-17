@@ -25,7 +25,6 @@ func _init(q_param_min: int, q_param_max: int, r_param_min: int, r_param_max: in
 # ------------------------------------------------------------------------------
 # Public Methods
 # ------------------------------------------------------------------------------
-# @return Vector2 or null if coordinates does not correspond to an island tile
 func get_island_info(coordinates: Vector2) -> IslandInfo:
 	for island_info: IslandInfo in islands:
 		for position: Vector2 in island_info.positions:
