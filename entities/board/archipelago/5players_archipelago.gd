@@ -75,3 +75,7 @@ func _init() -> void:
 			Tiles.Orientation.NorthWest,  
 			[Vector2(-1, 3), Vector2(-1, 4), Vector2(-1, 5)]),
 		]
+	self.boats = [
+		Vector2(1, -4),
+		Vector2(2, -1),
+		]

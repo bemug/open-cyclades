@@ -11,6 +11,7 @@ var q_param_max: int
 var r_param_min: int
 var r_param_max: int
 var islands: Array[IslandInfo]
+var boats: Array[Vector2]
 
 # ------------------------------------------------------------------------------
 # Constructor
@@ -21,6 +22,7 @@ func _init(q_param_min: int, q_param_max: int, r_param_min: int, r_param_max: in
 	self.r_param_min = r_param_min
 	self.r_param_max = r_param_max
 	self.islands = islands
+	self.boats = boats
 	
 # ------------------------------------------------------------------------------
 # Public Methods

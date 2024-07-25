@@ -6,6 +6,7 @@ extends Node3D
 # Properties
 # ------------------------------------------------------------------------------
 var archipelago_config: ArchipelagoConfiguration = FivePlayersArchipelago.new()
+var boat_scene_resource: PackedScene = preload("res://entities/board/tokens/boat/boat.tscn")
 var tiles : Dictionary = {} # Map<2DCoordinates, TileScene>
 var tile_size : float = 1
 	
@@ -62,7 +63,11 @@ func load_board() -> void:
 				
 			add_child(tile_scene)
 			tile_scene.connect("tile_selected", Callable(self, "_on_tile_selection"))
-
+			
+			if (coord in archipelago_config.boats):
+				var boat_scene: Node3D = boat_scene_resource.instantiate()
+				boat_scene.position = hex_to_pixel(coord)
+				add_child(boat_scene)
 # ------------------------------------------------------------------------------
 # Public Methods
 # ------------------------------------------------------------------------------
