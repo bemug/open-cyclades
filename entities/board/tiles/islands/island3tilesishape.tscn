@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://entities/board/tiles/hextile.gd" id="1_busu5"]
 [ext_resource type="PackedScene" uid="uid://d3ycc2ci8v7tv" path="res://entities/board/buildings/small_building_spot.tscn" id="2_d50ii"]
-[ext_resource type="PackedScene" uid="uid://cdpy806hm53tu" path="res://entities/board/buildings/acropolis_spot.tscn" id="3_uy4lh"]
+[ext_resource type="PackedScene" uid="uid://cdpy806hm53tu" path="res://entities/board/buildings/metropolis_spot.tscn" id="3_j408h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i82gl"]
 albedo_color = Color(0.402667, 0.689056, 0.297564, 1)
@@ -81,7 +81,7 @@ transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0.676724, 
 [node name="SmallBuildingSpot3" parent="Meshes" instance=ExtResource("2_d50ii")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -1.04847, 0, -1.8371)
 
-[node name="Acropolis" parent="Meshes" instance=ExtResource("3_uy4lh")]
+[node name="MetropolisSpot" parent="Meshes" instance=ExtResource("3_j408h")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0.885672, 0, 1.51798)
 
 [node name="Area3D" type="Area3D" parent="."]
