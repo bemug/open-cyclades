@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7lrttxd3vh16" path="res://entities/ui/side_panel/side_panel.tscn" id="2_0kvtj"]
 [ext_resource type="PackedScene" uid="uid://b52yxtvarfym6" path="res://entities/player/player.tscn" id="3_lsueo"]
 
-[node name="Test" type="Node3D"]
+[node name="Game" type="Node3D"]
 
 [node name="Gameboard" parent="." instance=ExtResource("1_is6ul")]
 
