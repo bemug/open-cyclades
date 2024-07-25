@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkiteelc0a0mm"]
+
+[ext_resource type="Script" path="res://entities/camera/board_camera.gd" id="1_ghy8q"]
+
+[node name="BoardCamera" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
+projection = 1
+current = true
+size = 15.0
+script = ExtResource("1_ghy8q")
