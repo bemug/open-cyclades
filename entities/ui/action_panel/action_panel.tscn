@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bampms60mwdiy"]
+
+[node name="ActionPanel" type="VBoxContainer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="PlaceBoat" type="Button" parent="."]
+layout_mode = 2
+text = "Placer un bateau"
+
+[node name="MoveBoats" type="Button" parent="."]
+layout_mode = 2
+text = "Déplacer des bateaux"
+
+[node name="CreateDock" type="Button" parent="."]
+layout_mode = 2
+text = "Créer un port"

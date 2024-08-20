@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh8ua3r0srcsj"]
+[gd_scene load_steps=6 format=3 uid="uid://dh8ua3r0srcsj"]
 
 [ext_resource type="PackedScene" uid="uid://b6g5loncn2v27" path="res://entities/board/gameboard.tscn" id="1_is6ul"]
 [ext_resource type="PackedScene" uid="uid://c7lrttxd3vh16" path="res://entities/ui/side_panel/side_panel.tscn" id="2_0kvtj"]
 [ext_resource type="PackedScene" uid="uid://dkiteelc0a0mm" path="res://entities/camera/board_camera.tscn" id="2_fv13y"]
 [ext_resource type="PackedScene" uid="uid://b52yxtvarfym6" path="res://entities/player/player.tscn" id="3_lsueo"]
+[ext_resource type="PackedScene" uid="uid://bampms60mwdiy" path="res://entities/ui/action_panel/action_panel.tscn" id="4_mpu38"]
 
 [node name="Game" type="Node3D"]
 
@@ -15,6 +16,8 @@
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.49736, 0)
 
 [node name="SidePanel" parent="." instance=ExtResource("2_0kvtj")]
+
+[node name="ActionPanel" parent="." instance=ExtResource("4_mpu38")]
 
 [node name="Players" type="Node" parent="."]
 
