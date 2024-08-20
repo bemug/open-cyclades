@@ -66,6 +66,7 @@ func load_board() -> void:
 			
 			if (coord in archipelago_config.boats):
 				var boat_scene: Node3D = boat_scene_resource.instantiate()
+				boat_scene.rotate(Vector3.MODEL_TOP, 1)
 				boat_scene.position = hex_to_pixel(coord)
 				add_child(boat_scene)
 # ------------------------------------------------------------------------------
