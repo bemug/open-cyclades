@@ -89,4 +89,3 @@ func hex_to_pixel(coord : Vector2) -> Vector3:
 func _on_tile_selection(tile: Hextile) -> void:
 	print(get_tile_coordinates(tile))
 	tile.highlight(true)
-
