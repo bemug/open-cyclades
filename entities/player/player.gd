@@ -21,3 +21,6 @@ func make_offering(offer : int) -> void:
 
 func gold() -> int:
 	return playerlist[currentplayer]
+
+func _on_action_panel_action_place_boat() -> void:
+	print("placing boat")

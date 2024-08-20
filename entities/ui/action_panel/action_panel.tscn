@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bampms60mwdiy"]
+[gd_scene load_steps=2 format=3 uid="uid://bampms60mwdiy"]
+
+[ext_resource type="Script" path="res://entities/ui/action_panel/action_panel.gd" id="1_bf5v3"]
 
 [node name="ActionPanel" type="VBoxContainer"]
 anchors_preset = 3
@@ -11,6 +13,7 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 8
+script = ExtResource("1_bf5v3")
 
 [node name="PlaceBoat" type="Button" parent="."]
 layout_mode = 2
@@ -23,3 +26,5 @@ text = "Déplacer des bateaux"
 [node name="CreateDock" type="Button" parent="."]
 layout_mode = 2
 text = "Créer un port"
+
+[connection signal="pressed" from="PlaceBoat" to="." method="_on_place_boat_pressed"]
