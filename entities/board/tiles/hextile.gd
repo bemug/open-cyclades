@@ -24,5 +24,5 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, position: Vector3,
 		var mouse_button: InputEventMouseButton = event as InputEventMouseButton
 		if(mouse_button.button_index == MOUSE_BUTTON_LEFT):
 			if(!mouse_button.pressed):
-				emit_signal("tile_selected", self)
+				tile_selected.emit(self)
 	

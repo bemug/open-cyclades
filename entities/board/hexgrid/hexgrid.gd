@@ -1,12 +1,15 @@
 @tool
 extends Node3D
+class_name Hexgrid
 #Reference : https://www.redblobgames.com/grids/hexagons/
 
 var archipelago_config: ArchipelagoConfiguration = FivePlayersArchipelago.new()
 var boat_scene_resource: PackedScene = preload("res://entities/board/tokens/boat/boat.tscn")
 var tiles : Dictionary = {} # Map<2DCoordinates, TileScene>
 var tile_size : float = 1
-	
+
+signal tile_selected(tile: Hextile)
+
 func _ready() -> void:
 	load_board()
 	
@@ -53,10 +56,13 @@ func load_board() -> void:
 			tile_scene.connect("tile_selected", Callable(self, "_on_tile_selection"))
 			
 			if (coord in archipelago_config.boats):
-				var boat_scene: Node3D = boat_scene_resource.instantiate()
-				boat_scene.rotate(Vector3.MODEL_TOP, 1)
-				boat_scene.position = hex_to_pixel(coord)
-				add_child(boat_scene)
+				_instantiate_boat(coord)
+
+func _instantiate_boat(coord: Vector2) -> void:
+	var boat_scene: Node3D = boat_scene_resource.instantiate()
+	boat_scene.rotate(Vector3.MODEL_TOP, 1)
+	boat_scene.position = hex_to_pixel(coord)
+	add_child(boat_scene)
 
 func get_tile_coordinates(tile: Hextile) -> Vector2:
 	for coord: Vector2 in tiles:
@@ -71,5 +77,16 @@ func hex_to_pixel(coord : Vector2) -> Vector3:
 	return Vector3(x, 0, y)
 
 func _on_tile_selection(tile: Hextile) -> void:
-	print(get_tile_coordinates(tile))
-	tile.highlight(true)
+	tile_selected.emit(tile)
+
+func get_tile_coord(tile: Hextile) -> Vector2:
+	for coord: Vector2 in tiles:
+		if tiles[coord] == tile:
+			return coord
+	assert(false, "Tile not found")
+	return Vector2.ZERO
+
+func add_boat(tile: Hextile) -> void:
+	var coord: Vector2 = get_tile_coord(tile)
+	archipelago_config.boats.push_back(coord)
+	_instantiate_boat(coord)
