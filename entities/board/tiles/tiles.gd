@@ -2,9 +2,7 @@
 class_name Tiles
 # Static class. Contains any preloaded tile scenes.
 # TODO: (later) load them in game loading phase.
-# ------------------------------------------------------------------------------
-# Tile Type
-# ------------------------------------------------------------------------------
+
 static var WATER_TILE : PackedScene = preload("res://entities/board/tiles/water/watertile.tscn")
 static var ISLAND_1TILE : PackedScene = preload("res://entities/board/tiles/islands/island1tile.tscn")
 static var ISLAND_2TILES : PackedScene = preload("res://entities/board/tiles/islands/island2tiles.tscn")
@@ -41,10 +39,7 @@ static func getTypePackedScene(type: Type) -> PackedScene:
 			return ISLAND_4TILES_SQUARE
 		Type.WaterTile, _: # also default case
 			return WATER_TILE
-	
-# ------------------------------------------------------------------------------
-# Tile Orientation
-# ------------------------------------------------------------------------------
+
 # DO NOT MODIFY ENUM CONSTANT VALUE.
 enum Orientation {NorthWest = 0, 
 	NorthEast = 1, 

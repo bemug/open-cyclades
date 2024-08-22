@@ -2,29 +2,17 @@
 extends Node3D
 #Reference : https://www.redblobgames.com/grids/hexagons/
 
-# ------------------------------------------------------------------------------
-# Properties
-# ------------------------------------------------------------------------------
 var archipelago_config: ArchipelagoConfiguration = FivePlayersArchipelago.new()
 var boat_scene_resource: PackedScene = preload("res://entities/board/tokens/boat/boat.tscn")
 var tiles : Dictionary = {} # Map<2DCoordinates, TileScene>
 var tile_size : float = 1
 	
-# ------------------------------------------------------------------------------
-# _ready
-# ------------------------------------------------------------------------------
 func _ready() -> void:
 	load_board()
 	
-# ------------------------------------------------------------------------------
-# _process
-# ------------------------------------------------------------------------------
 func _process(delta: float) -> void:
 	pass
 	
-# ------------------------------------------------------------------------------
-# Board Loader
-# ------------------------------------------------------------------------------
 func load_board() -> void:
 	var q_min: int = archipelago_config.q_param_min
 	var q_max: int = archipelago_config.q_param_max
@@ -69,9 +57,7 @@ func load_board() -> void:
 				boat_scene.rotate(Vector3.MODEL_TOP, 1)
 				boat_scene.position = hex_to_pixel(coord)
 				add_child(boat_scene)
-# ------------------------------------------------------------------------------
-# Public Methods
-# ------------------------------------------------------------------------------
+
 func get_tile_coordinates(tile: Hextile) -> Vector2:
 	for coord: Vector2 in tiles:
 		if(tiles[coord] == tile):
@@ -83,10 +69,7 @@ func hex_to_pixel(coord : Vector2) -> Vector3:
 	var x : float = tile_size * (sqrt(3) * coord.x  +  sqrt(3)/2 * coord.y)
 	var y : float = tile_size * (3./2 * coord.y)
 	return Vector3(x, 0, y)
-	
-# ------------------------------------------------------------------------------
-# Signals
-# ------------------------------------------------------------------------------
+
 func _on_tile_selection(tile: Hextile) -> void:
 	print(get_tile_coordinates(tile))
 	tile.highlight(true)

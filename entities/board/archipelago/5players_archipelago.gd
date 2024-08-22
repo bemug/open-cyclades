@@ -1,8 +1,6 @@
 class_name FivePlayersArchipelago
 extends ArchipelagoConfiguration
-# ------------------------------------------------------------------------------
-# Constructor
-# ------------------------------------------------------------------------------
+
 func _init() -> void:
 	self.q_param_min = -5
 	self.q_param_max = 5
