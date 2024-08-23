@@ -27,4 +27,14 @@ text = "Déplacer des bateaux"
 layout_mode = 2
 text = "Créer un port"
 
+[node name="GetPhilosopher" type="Button" parent="."]
+layout_mode = 2
+text = "Acquérir un philosophe"
+
+[node name="GetPriest" type="Button" parent="."]
+layout_mode = 2
+text = "Acquérir un prêtre"
+
 [connection signal="pressed" from="PlaceBoat" to="." method="_on_place_boat_pressed"]
+[connection signal="pressed" from="GetPhilosopher" to="." method="_on_get_philosopher_pressed"]
+[connection signal="pressed" from="GetPriest" to="." method="_on_get_priest_pressed"]

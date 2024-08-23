@@ -1,6 +1,9 @@
 extends Node3D
 class_name Hextile
 
+var boat: Boat
+var boat_scene_resource: PackedScene = preload("res://entities/board/tokens/boat/boat.tscn")
+
 signal tile_selected(tile: Hextile)
 
 func highlight(b: bool) -> void :
@@ -26,3 +29,9 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, position: Vector3,
 			if(!mouse_button.pressed):
 				tile_selected.emit(self)
 	
+func add_boat() -> void:
+	if not boat:
+		boat = boat_scene_resource.instantiate()
+		boat.rotate(Vector3.MODEL_TOP, 1)
+		add_child(boat)
+	boat.increment_number()

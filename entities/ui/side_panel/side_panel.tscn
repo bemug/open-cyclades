@@ -93,6 +93,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
+[node name="PlayerLabel" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Player"
+horizontal_alignment = 1
+
+[node name="PlayerValue" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+horizontal_alignment = 1
+
+[node name="Separator" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
 [node name="GoldValue" type="Label" parent="Commands/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -103,6 +119,30 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 text = "PO"
+horizontal_alignment = 1
+
+[node name="PhValue" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+horizontal_alignment = 1
+
+[node name="PhLabel" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Ph."
+horizontal_alignment = 1
+
+[node name="PrValue" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+horizontal_alignment = 1
+
+[node name="PrLabel" type="Label" parent="Commands/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pr."
 horizontal_alignment = 1
 
 [node name="EndTurnButton" type="Button" parent="Commands"]
