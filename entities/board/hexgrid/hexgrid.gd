@@ -73,4 +73,8 @@ func _on_tile_selection(tile: Hextile) -> void:
 	tile_selected.emit(tile)
 
 func add_boat(tile: Hextile) -> void:
-	tile.add_boat()
+	if not is_island(tile):
+		tile.add_boat()
+
+func is_island(tile: Hextile) -> bool:
+	return archipelago_config.get_island_info(get_tile_coordinates(tile)) != null
