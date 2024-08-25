@@ -30,4 +30,5 @@ unique_name_in_owner = true
 [connection signal="action_buy_philosopher" from="ActionPanel" to="Players/Player" method="_on_action_panel_action_buy_philosopher"]
 [connection signal="action_buy_priest" from="ActionPanel" to="Players/Player" method="_on_action_panel_action_buy_priest"]
 [connection signal="action_place_boat" from="ActionPanel" to="Players/Player" method="_on_action_panel_action_place_boat"]
+[connection signal="action_place_dock" from="ActionPanel" to="Players/Player" method="_on_action_panel_action_place_dock"]
 [connection signal="stats_changed" from="Players/Player" to="SidePanel" method="_on_player_stats_changed"]

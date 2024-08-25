@@ -4,6 +4,7 @@ class_name Player
 enum Action {
 	NOTHING,
 	PLACE_BOAT,
+	PLACE_DOCK,
 }
 
 @export var current_player: int = 1;
@@ -32,14 +33,13 @@ func _on_action_panel_action_place_boat() -> void:
 	current_action = Action.PLACE_BOAT
 
 func _on_hexgrid_spot_selected(spot: SmallBuildingSpot) -> void:
-	print("small building selected")
-
-func _place_boat(tile: Hextile) -> void:
-	hexgrid.add_boat(tile)
+	if current_action == Action.PLACE_DOCK:
+		spot.place_dock()
+		current_action = Action.NOTHING
 
 func _on_hexgrid_tile_selected(tile: Hextile) -> void:
 	if current_action == Action.PLACE_BOAT:
-		_place_boat(tile)
+		hexgrid.add_boat(tile)
 		current_action = Action.NOTHING
 
 func _on_action_panel_action_buy_philosopher() -> void:
@@ -49,3 +49,6 @@ func _on_action_panel_action_buy_philosopher() -> void:
 func _on_action_panel_action_buy_priest() -> void:
 	priests_nb += 1
 	stats_changed.emit(current_player, gold[current_player], philosophers_nb, priests_nb)
+
+func _on_action_panel_action_place_dock() -> void:
+	current_action = Action.PLACE_DOCK

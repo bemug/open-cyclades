@@ -97,6 +97,9 @@ shape = SubResource("CylinderShape3D_hs0js")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.866, 0, 1.5)
 shape = SubResource("CylinderShape3D_hs0js")
 
+[connection signal="spot_selected" from="Meshes/SmallBuildingSpot" to="." method="_on_small_building_spot_spot_selected"]
+[connection signal="spot_selected" from="Meshes/SmallBuildingSpot2" to="." method="_on_small_building_spot_2_spot_selected"]
+[connection signal="spot_selected" from="Meshes/SmallBuildingSpot3" to="." method="_on_small_building_spot_3_spot_selected"]
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

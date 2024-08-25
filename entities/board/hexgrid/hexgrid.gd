@@ -78,6 +78,7 @@ func _on_spot_selection(spot: SmallBuildingSpot) -> void:
 	spot_selected.emit(spot)
 
 func add_boat(tile: Hextile) -> void:
+	#TODO call directly from the player controller
 	if not is_island(tile):
 		tile.add_boat()
 
