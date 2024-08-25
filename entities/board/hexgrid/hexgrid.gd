@@ -72,12 +72,5 @@ func hex_to_pixel(coord : Vector2) -> Vector3:
 func _on_tile_selection(tile: Hextile) -> void:
 	tile_selected.emit(tile)
 
-func get_tile_coord(tile: Hextile) -> Vector2:
-	for coord: Vector2 in tiles:
-		if tiles[coord] == tile:
-			return coord
-	assert(false, "Tile not found")
-	return Vector2.ZERO
-
 func add_boat(tile: Hextile) -> void:
 	tile.add_boat()
