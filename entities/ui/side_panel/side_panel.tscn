@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7lrttxd3vh16"]
+[gd_scene load_steps=5 format=3 uid="uid://c7lrttxd3vh16"]
 
 [ext_resource type="PackedScene" uid="uid://be5tcn58e8101" path="res://entities/ui/side_panel/god/god.tscn" id="1_h7jmx"]
 [ext_resource type="Script" path="res://entities/ui/side_panel/side_panel.gd" id="1_i30fw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kyvn1"]
+font_color = Color(0.884178, 0.693003, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_36ecy"]
+font_color = Color(0.543839, 0.526738, 1, 1)
 
 [node name="SidePanel" type="PanelContainer"]
 anchors_preset = 9
@@ -113,12 +119,14 @@ text = ":"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "0"
+label_settings = SubResource("LabelSettings_kyvn1")
 horizontal_alignment = 1
 
 [node name="GoldLabel" type="Label" parent="Commands/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "PO"
+label_settings = SubResource("LabelSettings_kyvn1")
 horizontal_alignment = 1
 
 [node name="PhValue" type="Label" parent="Commands/HBoxContainer"]
@@ -137,12 +145,14 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 text = "0"
+label_settings = SubResource("LabelSettings_36ecy")
 horizontal_alignment = 1
 
 [node name="PrLabel" type="Label" parent="Commands/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Pr."
+label_settings = SubResource("LabelSettings_36ecy")
 horizontal_alignment = 1
 
 [node name="EndTurnButton" type="Button" parent="Commands"]
