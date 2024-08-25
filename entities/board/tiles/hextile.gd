@@ -5,6 +5,7 @@ var boat: Boat
 var boat_scene_resource: PackedScene = preload("res://entities/board/tokens/boat/boat.tscn")
 
 signal tile_selected(tile: Hextile)
+signal spot_selected(spot: SmallBuildingSpot)
 
 func highlight(b: bool) -> void :
 		for node: Node in $Meshes.get_children(): 
@@ -35,3 +36,6 @@ func add_boat() -> void:
 		boat.rotate(Vector3.MODEL_TOP, 1)
 		add_child(boat)
 	boat.increment_number()
+
+func _on_small_building_spot_spot_selected(spot: SmallBuildingSpot) -> void:
+	spot_selected.emit(spot)

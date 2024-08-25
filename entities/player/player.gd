@@ -31,6 +31,9 @@ func get_gold() -> int:
 func _on_action_panel_action_place_boat() -> void:
 	current_action = Action.PLACE_BOAT
 
+func _on_hexgrid_spot_selected(spot: SmallBuildingSpot) -> void:
+	print("small building selected")
+
 func _place_boat(tile: Hextile) -> void:
 	hexgrid.add_boat(tile)
 

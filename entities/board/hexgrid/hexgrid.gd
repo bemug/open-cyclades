@@ -8,6 +8,7 @@ var tiles : Dictionary = {} # Map<2DCoordinates, TileScene>
 var tile_size : float = 1
 
 signal tile_selected(tile: Hextile)
+signal spot_selected(spot: SmallBuildingSpot)
 
 func _ready() -> void:
 	load_board()
@@ -53,6 +54,7 @@ func load_board() -> void:
 				
 			add_child(tile_scene)
 			tile_scene.connect("tile_selected", Callable(self, "_on_tile_selection"))
+			tile_scene.connect("spot_selected", Callable(self, "_on_spot_selection"))
 			
 			if (coord in archipelago_config.boats):
 				tile_scene.add_boat()
@@ -71,6 +73,9 @@ func hex_to_pixel(coord : Vector2) -> Vector3:
 
 func _on_tile_selection(tile: Hextile) -> void:
 	tile_selected.emit(tile)
+
+func _on_spot_selection(spot: SmallBuildingSpot) -> void:
+	spot_selected.emit(spot)
 
 func add_boat(tile: Hextile) -> void:
 	if not is_island(tile):

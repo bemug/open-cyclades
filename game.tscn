@@ -25,6 +25,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.4
 [node name="Player" parent="Players" instance=ExtResource("3_lsueo")]
 unique_name_in_owner = true
 
+[connection signal="spot_selected" from="Hexgrid" to="Players/Player" method="_on_hexgrid_spot_selected"]
 [connection signal="tile_selected" from="Hexgrid" to="Players/Player" method="_on_hexgrid_tile_selected"]
 [connection signal="action_buy_philosopher" from="ActionPanel" to="Players/Player" method="_on_action_panel_action_buy_philosopher"]
 [connection signal="action_buy_priest" from="ActionPanel" to="Players/Player" method="_on_action_panel_action_buy_priest"]
