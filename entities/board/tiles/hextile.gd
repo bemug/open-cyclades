@@ -39,15 +39,3 @@ func add_boat() -> void:
 
 func _on_small_building_spot_spot_selected(spot: SmallBuildingSpot) -> void:
 	spot_selected.emit(spot)
-
-
-func _on_small_building_spot_2_spot_selected(spot: SmallBuildingSpot) -> void:
-	pass # Replace with function body.
-
-
-func _on_small_building_spot_3_spot_selected(spot: SmallBuildingSpot) -> void:
-	pass # Replace with function body.
-
-
-func _on_small_building_spot_4_spot_selected(spot: SmallBuildingSpot) -> void:
-	pass # Replace with function body.

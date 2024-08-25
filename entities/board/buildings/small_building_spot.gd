@@ -10,10 +10,10 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, position: Vector3,
 	if event is InputEventMouseButton:
 		var mouse_button: InputEventMouseButton = event as InputEventMouseButton
 		if(mouse_button.button_index == MOUSE_BUTTON_LEFT):
+			print("add dock")
 			if(!mouse_button.pressed):
 				spot_selected.emit(self)
 
 func place_dock() -> void:
-	print("add dock")
 	var dock : Node3D = dock_scene_resource.instantiate()
 	add_child(dock)
